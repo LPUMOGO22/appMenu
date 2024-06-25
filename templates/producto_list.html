@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> 
+    <title>Menu</title>
+  </head>
+  <body>
+    <section class="interior-section-two menu-section">
+      <div class="menu-list menu-list__dotted menu-list-1">
+        <h2 class="menu-list__title">Desayunos</h2>
+        <hr class="separator" />
+        <ul class="menu-list__items">
+            {% for producto in desayuno_productos %}
+                <li class="menu-list__item">
+                    <h4 class="menu-list__item-title">
+                    <span class="item_title">{{producto.nombre}}</span>
+                    <span class="dots"></span>
+                    </h4>
+                    <p class="menu-list__item-desc">
+                    <span class="desc__content"></span>
+                    </p>
+                    <p>{{producto.descripcion}}</p>
+
+                    <p></p>
+                    <span class="dots"></span>
+                    <span class="menu-list__item-price"><p>${{producto.precio}}</p> </span>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
+
+      <div class="menu-list menu-list__dotted menu-list-2">
+        <h2 class="menu-list__title">Comidas</h2>
+        <hr class="separator" />
+        <ul class="menu-list__items">
+          {% for producto in comida_productos %}
+            <li class="menu-list__item">
+                <h4 class="menu-list__item-title">
+                <span class="item_title">{{producto.nombre}}</span>
+                <span class="dots"></span>
+                </h4>
+                <p class="menu-list__item-desc">
+                <span class="desc__content"></span>
+                </p>
+                <p>{{producto.descripcion}}</p>
+
+                <p></p>
+                <span class="dots"></span>
+                <span class="menu-list__item-price"><p>${{producto.precio}}</p> </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </section>
+
+  </body>
+</html>

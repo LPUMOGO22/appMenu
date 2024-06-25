@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Listado de Categorias</title> 
+        <link rel="stylesheet" href="{% static 'styles.css' %}"> 
+    </head> 
+    <body> 
+        <div class="content section"> 
+            <div class="block">
+                <h2>Listado de Categorias</h2>
+
+                {% for categoria in categorias %}
+                    <ul>
+                        <li>
+                            {{ categoria }}
+                        </li>
+                    </ul>
+                {% empty %}
+                    <ul>
+                        <li>No hay categorias disponibles.</li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </div> 
+    </body> 
+</html>
